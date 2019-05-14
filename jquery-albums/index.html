@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Overpass:300,500,700"
+      rel="stylesheet"
+    />
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="./css/application.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/albums.js"></script>
+    <script src="./js/application.js"></script>
+  </head>
+  <body>
+    <header class="logo">
+      <img src="images/brand.png" />
+    </header>
+    <main>
+      <section class="search">
+        <form class="search__form">
+          <input
+            class="radius"
+            spellCheck="false"
+            placeholder="Search Artists"
+            name="search"
+            type="text"
+          />
+        </form>
+        <img class="spinner" src="images/status.png" alt="Loading Indicator" />
+      </section>
+      <section class="error radius">
+        The server returned an error.<img
+          class="error__close"
+          src="images/times.png"
+        />
+      </section>
+      <section class="filters">
+        <form class="filters__form">
+          <div class="filters__form-group">
+            <input
+              class="filters__checkbox"
+              type="checkbox"
+              name="explicit"
+              id="explicit"
+            />
+            <label class="filters__label" for="explicit">Explicit</label>
+          </div>
+          <div class="filters__form-group">
+            <input
+              class="filters__checkbox"
+              type="checkbox"
+              name="1900s"
+              id="1900s"
+            />
+            <label class="filters__label" for="1900s">1900s</label>
+          </div>
+          <div class="filters__form-group">
+            <input
+              class="filters__checkbox"
+              type="checkbox"
+              name="2000s"
+              id="2000s"
+            />
+            <label class="filters__label" for="explicit">2000s</label>
+          </div>
+          <div class="filters__form-group">
+            <input
+              class="filters__checkbox"
+              type="checkbox"
+              name="single"
+              id="single"
+            />
+            <label class="filters__label" for="explicit">Single</label>
+          </div>
+          <div class="filters__form-group">
+            <input
+              class="filters__checkbox"
+              type="checkbox"
+              name="ep"
+              id="ep"
+            />
+            <label class="filters__label" for="ep">EP</label>
+          </div>
+        </form>
+      </section>
+      <section class="results">
+        <!-- The results will be added here dynamically -->
+      </section>
+    </main>
+  </body>
+</html>
