@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import useDebounce from "hooks/useDebounce";
 
-import Loading from "components/Loading";
-
 export default function SearchBar(props) {
   const [value, setValue] = useState("");
 
@@ -22,7 +20,6 @@ export default function SearchBar(props) {
           onChange={event => setValue(event.target.value)}
         />
       </form>
-      <Loading show={props.loading} />
     </section>
   );
 }
