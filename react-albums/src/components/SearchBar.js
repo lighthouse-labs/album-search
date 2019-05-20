@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import useDebounce from "hooks/useDebounce";
 
 export default function SearchBar(props) {
   const [value, setValue] = useState("");
+  const term = useDebounce(value, 400);
 
-  useDebounce(() => props.onSearch(value), 400, [value]);
+  const onSearch = useCallback(props.onSearch, [term]);
+
+  useEffect(() => {
+    onSearch(term);
+  }, [term, onSearch]);
 
   return (
     <section className="search">

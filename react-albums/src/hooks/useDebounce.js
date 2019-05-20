@@ -1,8 +1,12 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export default function useDebounce(operation, ms, deps) {
+export default function useDebounce(input, ms) {
+  const [debounced, setDebounced] = useState("");
+
   useEffect(() => {
-    const handle = setTimeout(() => operation(), ms);
-    return () => clearTimeout(handle);
-  }, deps);
+    const timeout = setTimeout(() => setDebounced(input), ms);
+    return () => clearTimeout(timeout);
+  }, [input, ms]);
+
+  return debounced;
 }
