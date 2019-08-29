@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-export default function useDebounce(operation, ms, deps) {
+export default function useDebounce(operation, ms) {
   useEffect(() => {
-    const handle = setTimeout(() => operation(), ms);
+    const handle = setTimeout(operation, ms);
     return () => clearTimeout(handle);
-  }, deps);
+  }, [operation, ms]);
 }

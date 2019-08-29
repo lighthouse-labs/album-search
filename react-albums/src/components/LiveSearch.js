@@ -50,9 +50,7 @@ export default function LiveSearch(props) {
 
     axios
       .get(
-        `https://itunes.apple.com/search?term=${
-          search.term
-        }&country=CA&media=music&entity=album&attribute=artistTerm`
+        `https://itunes.apple.com/search?term=${search.term}&country=CA&media=music&entity=album&attribute=artistTerm`
       )
       .then(response => {
         response.data.results.sort((a, b) => {
@@ -62,11 +60,11 @@ export default function LiveSearch(props) {
           );
         });
 
-        setSearch({
+        setSearch(search => ({
           ...search,
           results: response.data.results,
           loading: false
-        });
+        }));
       })
       .catch(error => {
         showError();

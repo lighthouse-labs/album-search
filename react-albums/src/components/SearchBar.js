@@ -7,7 +7,7 @@ import Loading from "components/Loading";
 export default function SearchBar(props) {
   const [value, setValue] = useState("");
 
-  useDebounce(() => props.onSearch(value), 400, [value]);
+  useDebounce(() => props.onSearch(value), 400);
 
   return (
     <section className="search">
