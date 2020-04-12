@@ -25,5 +25,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://itunes.apple.com/"
+  "proxy": "https://cors-anywhere.herokuapp.com/"
 }
